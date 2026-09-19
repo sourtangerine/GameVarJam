@@ -9,7 +9,7 @@ enum State { PLAYER_TURN, ENEMY_TURN, WON, LOST, ESCAPED }
 @export var enemy_damage := Vector2i(1, 3)
 @export var item_heal := 4
 @export var items_left := 2
-@export var run_chance := 0.5
+@export var run_chance := 1.0
 
 var state := State.PLAYER_TURN
 var player_hp := 0
@@ -32,8 +32,13 @@ var reflect_next_hit := false   # set by ReverseButton
 
 @onready var buttons: Array[Button] = [attack_button, item_button, run_button, reverse_button]
 
+const CREATURE_HP := {
+	"skull": 50,
+	"bat": 20,
+}
 
 func _ready() -> void:
+	enemy_max_hp = CREATURE_HP.get(EncounterManager.current_creature_id, enemy_max_hp)
 	player_hp = player_max_hp
 	enemy_hp = enemy_max_hp
 
@@ -97,8 +102,9 @@ func _end_battle(result: State) -> void:
 		State.WON: print("You won!")
 		State.LOST: print("You lost...")
 		State.ESCAPED: print("Got away safely.")
-	# TODO: result screen / go back to the overworld:
-	# get_tree().change_scene_to_file("res://scenes/main.tscn")
+
+	await get_tree().create_timer(1.0).timeout   # short pause so the player sees the result
+	EncounterManager.end_battle()
 
 
 # ---------- player actions ----------

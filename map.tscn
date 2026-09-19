@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://2wgi7g6btddw" path="res://scenes/Levels/Tiled_files/fire_animation2.png" id="10_r5om4"]
 [ext_resource type="Texture2D" uid="uid://40ffdmchp0gb" path="res://scenes/Levels/Tiled_files/doors_lever_chest_animation.png" id="11_jky6x"]
 [ext_resource type="Texture2D" uid="uid://b2dalju4s4hyi" path="res://scenes/Levels/Tiled_files/Objects.png" id="12_4sf5t"]
+[ext_resource type="Script" uid="uid://bx3v1k25qgbg4" path="res://character_body_2d.gd" id="14_2wwcf"]
+[ext_resource type="Script" uid="uid://bc2jhbpv7m4ll" path="res://encounter_zone.gd" id="14_ooc2g"]
+[ext_resource type="Script" uid="uid://crns3lrwj5hte" path="res://scenes/src/encounter_entry.gd" id="16_wbpbn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mr0t"]
 texture = ExtResource("2_6qsgm")
@@ -6898,10 +6901,8 @@ texture = ExtResource("5_wbpbn")
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 2:4/0 = 0
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
-4:26/0 = 0
 7:1/0 = 0
 7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
-5:26/0 = 0
 11:2/0 = 0
 11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 9:2/0 = 0
@@ -6910,27 +6911,19 @@ texture = ExtResource("5_wbpbn")
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 2:5/0 = 0
 2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
-6:25/0 = 0
-6:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -4.856185, 8, 8, -8, 8, -8, -4.6763268)
 9:4/0 = 0
 9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 13:3/0 = 0
 3:19/0 = 0
 3:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:26/0 = 0
-6:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 0, -2.877739, 0.17985916, 8, -8, 8, -8, -8)
 5:17/0 = 0
 5:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:27/0 = 0
-6:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.17985916, -8, 0.35971832, 0.8992939, -8, 1.6187286, -8, -8)
-7:25/0 = 0
-7:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -4.856185, 8, 8, -8, 8, -8, -4.6763268)
 3:18/0 = 0
 3:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.2159023, 8, -5.3957615, 8, 8, -8, 8)
 7:26/0 = 0
-7:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, -3.057598, 8, 8, 1.2590103, 8, 1.0791531, -2.877739, -8, -8)
 7:27/0 = 0
-7:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 2.3381634, 0.8992939, 1.978447, 0.71943474, -8)
 5:3/0 = 0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 4:27/0 = 0
@@ -7051,26 +7044,26 @@ texture = ExtResource("5_wbpbn")
 2:22/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -5.75548, 8, -5.935338, -8)
 15:4/0 = 0
 15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
-2:26/0 = 0
-2:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.057598, 6.115198, -3.4173155, -0.35971642, -2.5180225, -1.978445, 8, -8, 8, 8, -3.2374573, 8)
-3:26/0 = 0
-3:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 2.5180225, 8, 1.6187286, -1.6187286)
 2:27/0 = 0
 2:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.057598, -8, -2.877739, -1.0791512, 8, -1.4388695, 8, -8)
 3:27/0 = 0
 3:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -0.8992939, 3.057598, -1.2590103, 2.1583042, -8)
-0:25/0 = 0
-0:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.71943474, 5.935339, 1.978445, 4.856186, 3.956892, 3.956892, 8, 3.2374573, 8, 8, 0, 8)
-1:25/0 = 0
-1:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.5971756, -8, 8, 0.5395756, 8, -2.1583042, 5.036045)
 0:26/0 = 0
 0:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.057598, 6.115198, -3.4173155, -0.35971642, -1.7985878, -8, 8, -8, 8, 8, -3.2374573, 8)
 1:26/0 = 0
-1:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 2.3381634, 8, 2.6978817, -8)
+1:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:27/0 = 0
 0:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.057598, -8, -2.877739, -5.3957615, 8, -5.5756197, 8, -8)
 1:27/0 = 0
 1:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -5.2159023, 2.5180225, -5.036044, 2.6978817, -8)
+6:25/0 = 0
+7:25/0 = 0
+5:26/0 = 0
+4:26/0 = 0
+3:26/0 = 0
+2:26/0 = 0
+0:25/0 = 0
+1:25/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6rn7"]
 texture = ExtResource("6_a6rn7")
@@ -9663,7 +9656,15 @@ sources/9 = SubResource("TileSetAtlasSource_4sf5t")
 sources/10 = SubResource("TileSetAtlasSource_2wwcf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(55.5, 26.5)
+size = Vector2(21.625, 49.25)
+
+[sub_resource type="Resource" id="Resource_wbpbn"]
+script = ExtResource("16_wbpbn")
+creature_id = "skull"
+metadata/_custom_type_script = "uid://crns3lrwj5hte"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jhfk"]
+size = Vector2(605.83344, 446.33337)
 
 [node name="Map" type="TileMapLayer" unique_id=713543352]
 
@@ -9671,27 +9672,40 @@ size = Vector2(55.5, 26.5)
 position = Vector2(916, 233)
 scale = Vector2(3, 3)
 
-[node name="Floor2_pool" parent="Dungeon1" index="4" unique_id=887609193]
+[node name="Floor2_pool" parent="Dungeon1" index="4" unique_id=1089361676]
 tile_set = SubResource("TileSet_te172")
 
-[node name="Floor2_darker_surface" parent="Dungeon1" index="5" unique_id=1600237923]
+[node name="Floor2_darker_surface" parent="Dungeon1" index="5" unique_id=2067877415]
 tile_set = SubResource("TileSet_y0s0d")
 
-[node name="Walls" parent="Dungeon1" index="9" unique_id=1435969206]
+[node name="Walls" parent="Dungeon1" index="9" unique_id=1980717622]
 tile_set = SubResource("TileSet_3mr0t")
 
-[node name="Lights" parent="Dungeon1" index="11" unique_id=1400310933]
+[node name="Lights" parent="Dungeon1" index="11" unique_id=952518009]
 visible = true
 
-[node name="Player" parent="Dungeon1" unique_id=993795172 instance=ExtResource("2_wijl4")]
-position = Vector2(-254.33334, 21.666668)
-scale = Vector2(0.33333334, 0.33333334)
+[node name="Player" parent="." unique_id=993795172 instance=ExtResource("2_wijl4")]
+position = Vector2(153, 298)
+collision_mask = 7
 
-[node name="Camera2D" type="Camera2D" parent="Dungeon1/Player" unique_id=1302559104]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1302559104]
 position = Vector2(4, -7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon1/Player" unique_id=1966075521]
-position = Vector2(1, 12)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1966075521]
+position = Vector2(3.1875, -0.375)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player" unique_id=59785332]
+script = ExtResource("14_2wwcf")
+
+[node name="Encounter zone" type="Area2D" parent="." unique_id=1087305027]
+position = Vector2(916, 233)
+scale = Vector2(3, 3)
+script = ExtResource("14_ooc2g")
+entries = Array[ExtResource("16_wbpbn")]([SubResource("Resource_wbpbn")])
+
+[node name="Collision 1" type="CollisionShape2D" parent="Encounter zone" unique_id=1880175282]
+position = Vector2(0.08337402, 144.83336)
+shape = SubResource("RectangleShape2D_3jhfk")
 
 [editable path="Dungeon1"]
