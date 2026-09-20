@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var encounter_chance := 1.0   # 0.1 = 10% per step
+@export var encounter_chance := 0.3   # 0.1 = 10% per step
 @export var entries: Array[EncounterEntry] = []
 
 
